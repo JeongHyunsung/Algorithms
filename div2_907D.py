@@ -5,7 +5,7 @@ L = lambda: list(S())
 def solve():
     q = int(input())
     dt = []
-    for i in range(2, 50):
+    for i in range(2, 62):
         #range = 2** i ~ 2**(i+1)-1
         cnt = 0
         nm = 2 ** i
@@ -22,12 +22,11 @@ def solve():
     for qer in range(q):
         a, b = S()
         ac, bc = 0, 0
-        for i in range(51):
+        for i in range(len(dt)-1):
             if dt[i][0] <= a < dt[i+1][0]:
                 ac = i
             if dt[i][0] <= b < dt[i+1][0]:
                 bc = i
-        print(ac, bc)
         sm = 0
         if ac == bc:
             ans_lst.append((dt[ac][1] * (b-a+1)) % (10**9 + 7))
